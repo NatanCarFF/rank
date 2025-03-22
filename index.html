@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Itens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Classificação de Itens</h1>
+
+        <div class="actions">
+            <button id="adicionar-btn">Adicionar Item</button>
+            <input type="file" id="importar-btn" style="display:none" />
+            <label for="importar-btn" class="btn-importar">Importar</label>
+            <button id="exportar-btn">Exportar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Item</th>
+                    <th>Requisito 1</th>
+                    <th>Requisito 2</th>
+                    <th>Requisito 3</th>
+                    <th>Requisito 4</th>
+                    <th>Requisito 5</th>
+                    <th>Requisito 6</th>
+                    <th>Requisito 7</th>
+                    <th>Requisito 8</th>
+                    <th>Requisito 9</th>
+                    <th>Requisito 10</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-body">
+                <!-- Itens serão adicionados aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
