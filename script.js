@@ -148,3 +148,18 @@ document.getElementById("importar-btn").addEventListener("change", function(even
     };
   }
 });
+
+// Função de filtro da busca
+document.getElementById("search-box").addEventListener("input", function() {
+  const filtro = this.value.toLowerCase();
+  const linhas = document.getElementById("tabela-body").getElementsByTagName("tr");
+
+  for (let linha of linhas) {
+    const nomeItem = linha.getElementsByTagName("td")[1].innerText.toLowerCase();
+    if (nomeItem.includes(filtro)) {
+      linha.style.display = "";
+    } else {
+      linha.style.display = "none";
+    }
+  }
+});
