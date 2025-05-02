@@ -5,23 +5,14 @@ document.getElementById("adicionar-btn").addEventListener("click", function() {
   // Cria a nova linha da tabela
   const novaLinha = document.createElement("tr");
 
-  // Adiciona as células para a imagem, nome e requisitos
+  // Adiciona as células para a imagem, nome, nota e ações
   novaLinha.innerHTML = `
     <td contenteditable="true" class="imagem">
       <img src="" alt="Imagem do item" class="item-imagem" onclick="editarImagem(event)">
     </td>
     <td contenteditable="true" class="nome-item">Novo Item</td>
-    <td contenteditable="true">Requisito 1</td>
-    <td contenteditable="true">Requisito 2</td>
-    <td contenteditable="true">Requisito 3</td>
-    <td contenteditable="true">Requisito 4</td>
-    <td contenteditable="true">Requisito 5</td>
-    <td contenteditable="true">Requisito 6</td>
-    <td contenteditable="true">Requisito 7</td>
-    <td contenteditable="true">Requisito 8</td>
-    <td contenteditable="true">Requisito 9</td>
-    <td contenteditable="true">Requisito 10</td>
-    <td>
+    <td contenteditable="true" class="nota-item">Nota</td>
+    <td class="acoes">
       <button onclick="moverItemUp(this)">⬆️</button>
       <button onclick="moverItemDown(this)">⬇️</button>
       <button onclick="removerItem(this)">🗑️</button>
@@ -78,13 +69,8 @@ document.getElementById("exportar-btn").addEventListener("click", function() {
     const item = {
       imagem: celulas[0].querySelector("img").src, // Obtém o src da imagem
       nome: celulas[1].innerText,
-      requisitos: []
+      nota: celulas[2].innerText // Obtém a nota do item
     };
-
-    // Adicionar os requisitos ao item
-    for (let i = 2; i <= 11; i++) {
-      item.requisitos.push(celulas[i].innerText);
-    }
 
     // Adicionar o item à lista
     itens.push(item);
@@ -131,8 +117,8 @@ document.getElementById("importar-btn").addEventListener("change", function(even
             <img src="${item.imagem}" alt="Imagem do item" class="item-imagem" onclick="editarImagem(event)">
           </td>
           <td contenteditable="true" class="nome-item">${item.nome}</td>
-          ${item.requisitos.map(req => `<td contenteditable="true">${req}</td>`).join('')}
-          <td>
+          <td contenteditable="true" class="nota-item">${item.nota}</td>
+          <td class="acoes">
             <button onclick="moverItemUp(this)">⬆️</button>
             <button onclick="moverItemDown(this)">⬇️</button>
             <button onclick="removerItem(this)">🗑️</button>
